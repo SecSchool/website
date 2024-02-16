@@ -2,6 +2,7 @@ FROM node:alpine AS frontend-builder
 WORKDIR /app
 COPY ./frontend/ ./
 RUN npm install
+RUN npm run build
 
 FROM rust:alpine AS backend-builder
 WORKDIR /app
